@@ -1,0 +1,39 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<head>
+    @{
+        Layout = "_Layout";
+    }
+    <link href="~/css/Example2.css" rel="stylesheet" />
+</head>
+<body class="home page-template-default page page-id-32 logged-in admin-bar no-customize-support custom-background custom-background-image custom-background-color full-width" itemscope itemtype="http://schema.org/WebPage">
+    <div id="page" class="site">
+        <a class="skip-link screen-reader-text" href="#acc-content"></a>
+        <header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+            <div class="header-t">
+                <div class="container">
+                    <div class="site-branding" itemscope itemtype="http://schema.org/Organization">
+                        <div class="text-logo">
+                            <h1 class="site-title forum-navbar-title" itemprop="name"><a class="main-title" asp-controller="Forum" asp-action="Home">Forum</a></h1>
+                            <p class="site-description" itemprop="description">Share your Opinion</p>
+                        </div>
+                    </div>
+                    <div class="menu-opener">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+
+            <nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                <ul id="primary-menu" class="menu">
+                    <li><a asp-controller="Home" asp-action="index"><i class="fas fa-birthday-cake"></i></a> <text class="menuText">Home</text></li>
+                    <li><a asp-controller="Forum" asp-action="CreateTopic"><i class="fas fa-pencil-alt"></i></a> <text class="menuText">Create Topic</text></li>
+                    <li><a asp-controller="Forum" asp-action="Recent"><i class="fas fa-history"></i></a> <text class="menuText">Recent Topics</text></li>
+                    <li><a asp-controller="Forum" asp-action="Popular"><i class="fas fa-fire"></i></a> <text class="menuText">Popular Topics</text></li>
+                    <li><a asp-controller="Forum" asp-action="CustomerTopics"><i class="fas fa-address-book"></i></a> <text class="menuText">Your Topics</text></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+</body>

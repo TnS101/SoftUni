@@ -1,0 +1,34 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<WebApplication1.Data.DbModels.Cake>
+<head>
+    @{
+        Layout = "_Layout";
+     }
+    <title>Order Cake</title>
+
+</head>
+<body class="page-template-default page page-id-43 logged-in admin-bar custom-background custom-background-image custom-background-color full-width customize-support body about-body" >
+    <partial name="_NavBar">
+        <br />
+        @{
+            foreach (var cake in Model)
+            {
+                <div class="entry-content cake-entry-content" itemprop="text">
+                    <div class="blog-section cake-blog-section">
+                        <p class="mainText">@cake.Name</p>
+                    </div>
+                    <div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img class="cake-image" src="@cake.ImageURL"></figure></div>
+
+                    <p>@cake.Description </p>
+                    <p>Order now for @cake.Price.00$</p>
+                    <a asp-controller="Cake" asp-action="Submitted" asp-route-id="@cake.Id"><i class="fas fa-money-check-alt cake-pay"></i></a>
+                </div>
+                <br />
+            }
+        }
+</body>
+<br />
+
+<footer>
+    <partial name="_Footer" >
+</footer>
