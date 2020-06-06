@@ -1,27 +1,11 @@
-function solution(input) {
-    let data = [];
-
-    for (let index = 0; index < input.length; index++) {
-        let element = input[index];
-        data.push(JSON.parse(element));
+function solution(array) {
+    let result = '<table>';
+    for (let index = 0; index < array.length; index++) {
+        let element = JSON.parse(array[index]);
+        result += `\n\t<tr>\n\t\t<td>${element.name}</td>\n\t\t<td>${element.position}</td>\n\t\t<td>${element.salary}</td>\n\t</tr>`;
     }
 
-    let result = '<table></table>';
-
-    for (let index = 0; index < data.length; index++) {
-        let element = data[index];
-        let collection = element.name;
-
-        for (let i = 0; i < collection.length; i++) {
-            let property;
-
-            if (i % 2 != 0) {
-                property = collection[i];
-            }
-
-            result += `<tr>${property}</tr>`;
-        }
-    }
+    result += '\n</table>';
 
     console.log(result);
 }
