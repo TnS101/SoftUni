@@ -1,8 +1,21 @@
-let getFibonator = function solution() {
-    let sumNum = 0;
-    sumNum++;
-    return sumNum;
-}();
+function getFibonator() {
+    let previous = 0;
+    let current = 1;
 
-console.log(getFibonator);
-console.log(getFibonator);
+    function fibonator() {
+        let newNumber = previous + current;
+        previous = current;
+        current = newNumber
+
+        return previous;
+    }
+
+    return fibonator;
+};
+
+let fib = getFibonator();
+console.log(fib());
+console.log(fib());
+console.log(fib());
+console.log(fib());
+console.log(fib());

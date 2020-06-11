@@ -18,9 +18,7 @@ class Company {
 
         this.company.map(x => x.department).sort((a, b) => b.salary - a.salary);
 
-        this.company.sort((a, b) => b.salary - a.salary);
-        this.company.sort((a, b) => b.name - a.name);
-        this.company.sort((a, b) => a.name.length - b.name.length);
+        this.company.sort((a, b) => b.salary - a.salary || a.name.localeCompare(b.name));
 
         let naiDobrataFirma = this.company[0].department;
         let bestDepart = this.company.filter(x => x.department == naiDobrataFirma);
