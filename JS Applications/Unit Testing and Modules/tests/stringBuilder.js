@@ -41,8 +41,8 @@ describe('StringBuilder', function() {
     const instance = new StringBuilder();
     describe('constructor', function() {
         it('should be initiliazed when string param is given', function() {
-            let input = 's';
-            expect(new StringBuilder(input)._stringArray).to.eq(input.split(''), errorMessage);
+            let input = 'string';
+            expect(new StringBuilder(input)._stringArray).to.eq(Array.from(input), errorMessage);
         });
 
         it('should be initiliazed with empty ctor', function() {
@@ -88,11 +88,11 @@ describe('StringBuilder', function() {
 
     describe('_vrfyParam', function() {
         it('should throw an error if param is a number', function() {
-            expect(StringBuilder._vrfyParam(1)).throws(new TypeError('Argument must be string'), errorMessage);
+            expect(() => StringBuilder._vrfyParam(1)).to.throw;
         });
 
         it('should throw an error if param is an object', function() {
-            expect(StringBuilder._vrfyParam({ obj: 'obj' })).throws(new TypeError('Argument must be string'), errorMessage);
+            expect(() => StringBuilder._vrfyParam({ obj: 'obj' })).to.throw;
         });
     });
 });
