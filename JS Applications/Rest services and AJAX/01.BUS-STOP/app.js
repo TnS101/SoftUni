@@ -1,3 +1,3 @@
 function getInfo() {
-    console.log("TODO...");
+    const button = document.getElementById('submit');
 }
