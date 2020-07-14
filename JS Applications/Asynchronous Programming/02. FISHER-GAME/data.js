@@ -2,7 +2,7 @@ function host(endpoint) {
     if (endpoint === undefined) {
         return 'http://localhost:8000/fishergame';
     } else {
-        return `http://localhost:8000/fishergame/${endpoint}`;
+        return `http://localhost:8000/fishergame/catches/${endpoint}.json`;
     }
 }
 
