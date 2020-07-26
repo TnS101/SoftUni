@@ -13,6 +13,7 @@ export async function details() {
 
     const data = await getDetails(this.params.id);
     Object.assign(data, this.app.userData);
+    console.log(data);
 
     if (data.ownerId === this.app.userData.userId) {
         data.isAuthor = true;

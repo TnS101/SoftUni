@@ -21,8 +21,8 @@ export async function loginPost() {
             throw error;
         }
         this.app.userData.loggedIn = true;
-        this.app.userData.username = this.params.username;
-        this.app.userData.userId = this.params.objectId;
+        this.app.userData.username = result.username;
+        this.app.userData.userId = result.objectId;
 
         localStorage.setItem('userToken', result['user-token']);
         localStorage.setItem('username', result.username);
@@ -57,4 +57,5 @@ export async function logoutPost() {
     localStorage.removeItem('userToken');
 
     await logout();
+    this.redirect('#/home');
 }

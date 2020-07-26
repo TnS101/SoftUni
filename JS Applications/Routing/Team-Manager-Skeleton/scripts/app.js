@@ -23,7 +23,7 @@ $(() => {
         this.get('#/login', user.loginGet);
         this.post('#/login', (ctx) => { user.loginPost.call(ctx); });
 
-        this.post('#/logout', (ctx) => { user.logoutPost.call(ctx); });
+        this.get('#/logout', user.logoutPost);
 
         this.get('#/catalog', catalog.main);
         this.get('#/catalog/:id', catalog.details);

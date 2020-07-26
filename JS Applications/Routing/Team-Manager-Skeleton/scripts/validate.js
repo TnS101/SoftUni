@@ -1,4 +1,4 @@
-export function auth(e) {
+export function auth() {
     if (!localStorage.getItem('userToken')) {
         const message = 'You must be logged in!';
         alert(message);

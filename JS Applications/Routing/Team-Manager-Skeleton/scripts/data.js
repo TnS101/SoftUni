@@ -8,7 +8,8 @@ const endpoints = {
     register: 'users/register',
     login: 'users/login',
     teams: 'data/teams',
-    details: 'data/teams/'
+    details: 'data/teams/',
+    logout: 'users/logout'
 }
 
 export async function getTeams() {
@@ -61,12 +62,7 @@ export async function createTeam(team) {
 }
 
 export async function logout() {
-    auth();
-
-    return (await fetch(host(), {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    })).json();
+    return (await fetch(host(endpoints.logout), {
+        method: 'GET',
+    }));
 }
