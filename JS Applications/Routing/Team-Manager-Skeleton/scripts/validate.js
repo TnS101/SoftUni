@@ -6,14 +6,13 @@ export function auth(e) {
     }
 }
 
-export function errors(result, redirect) {
+export function errors(result) {
     try {
         if (result.hasOwnProperty('errorData')) {
             const error = new Error();
             Object.assign(error, result);
             throw error;
         }
-        this.redirect(redirect);
     } catch (error) {
         alert(error.message);
     }

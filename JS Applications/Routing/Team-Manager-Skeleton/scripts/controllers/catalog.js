@@ -1,4 +1,4 @@
-import { createTeam } from '../data.js';
+import { createTeam, getTeams, getDetails } from '../data.js';
 import * as validate from '../validate.js';
 
 export async function details() {
@@ -11,7 +11,17 @@ export async function details() {
         teamMember: await this.load('./templates/catalog/teamMember.hbs'),
     };
 
-    this.partial('./templates/catalog/details.hbs', this.app.userData);
+    const data = await getDetails(this.params.id);
+    Object.assign(data, this.app.userData);
+
+    if (data.ownerId === this.app.userData.userId) {
+        data.isAuthor = true;
+    }
+    if (data.objectId === this.app.userData.teamId) {
+        data.isOnTeam = true;
+    }
+
+    this.partial('./templates/catalog/details.hbs', data);
 }
 
 export async function main() {
@@ -22,7 +32,10 @@ export async function main() {
         footer: await this.load('./templates/common/footer.hbs'),
         team: await this.load('./templates/catalog/team.hbs'),
     };
-    this.partial('./templates/catalog/teamCatalog.hbs', this.app.userData);
+    const data = await getTeams();
+    Object.assign(data, this.app.userData);
+
+    this.partial('./templates/catalog/teamCatalog.hbs', { teams: data });
 }
 
 export async function create() {
@@ -49,7 +62,8 @@ export async function createPost() {
     }
 
     const result = await createTeam(newTeam);
-    validate.errors(result, `#/details/:${result.objectId}`);
+    validate.errors(result);
+    this.redirect(`#/catalog/${result.objectId}`);
 }
 
 export async function edit() {

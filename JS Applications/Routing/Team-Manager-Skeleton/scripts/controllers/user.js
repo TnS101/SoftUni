@@ -22,8 +22,12 @@ export async function loginPost() {
         }
         this.app.userData.loggedIn = true;
         this.app.userData.username = this.params.username;
+        this.app.userData.userId = this.params.objectId;
 
         localStorage.setItem('userToken', result['user-token']);
+        localStorage.setItem('username', result.username);
+        localStorage.setItem('userId', result.objectId);
+
 
         this.redirect('#/home');
     } catch (error) {
@@ -42,7 +46,8 @@ export async function registerGet() {
 
 export async function registerPost() {
     const result = await register(this.params.username, this.params.password);
-    validate.errors(result, '#/login')
+    validate.errors(result);
+    this.redirect('#/login');
 }
 
 export async function logoutPost() {

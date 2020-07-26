@@ -7,7 +7,18 @@ function host(endpoint) {
 const endpoints = {
     register: 'users/register',
     login: 'users/login',
-    team: 'data/teams'
+    teams: 'data/teams',
+    details: 'data/teams/'
+}
+
+export async function getTeams() {
+    return (await fetch(host(endpoints.teams))
+        .then(result => result.json()));
+}
+
+export async function getDetails(id) {
+    return await (fetch(host(endpoints.details) + id)
+        .then(result => result.json()));
 }
 
 export async function register(username, password, repeatPassword) {
@@ -39,7 +50,7 @@ export async function login(username, password) {
 export async function createTeam(team) {
     auth();
 
-    return (await fetch(host(endpoints.team), {
+    return (await fetch(host(endpoints.teams), {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
