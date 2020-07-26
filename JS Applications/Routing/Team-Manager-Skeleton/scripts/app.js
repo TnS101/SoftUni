@@ -32,8 +32,7 @@ $(() => {
         this.post('#/create', (ctx) => { catalog.createPost.call(ctx); });
 
         this.get('#/edit/:id', catalog.edit);
-        this.post('#/edit', (ctx) => { catalog.createEdit.call(ctx); });
-
+        this.put('#/edit/:id', (ctx) => { catalog.editPost.call(ctx); });
     });
 
     app.run();

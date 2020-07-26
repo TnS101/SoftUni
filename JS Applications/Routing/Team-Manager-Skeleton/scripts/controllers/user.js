@@ -21,13 +21,12 @@ export async function loginPost() {
             throw error;
         }
         this.app.userData.loggedIn = true;
-        this.app.userData.username = result.username;
+        this.app.userData.username = result.email;
         this.app.userData.userId = result.objectId;
 
         localStorage.setItem('userToken', result['user-token']);
-        localStorage.setItem('username', result.username);
+        localStorage.setItem('username', result.email);
         localStorage.setItem('userId', result.objectId);
-
 
         this.redirect('#/home');
     } catch (error) {

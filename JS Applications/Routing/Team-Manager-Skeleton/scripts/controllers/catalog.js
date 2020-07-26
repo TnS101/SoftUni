@@ -1,4 +1,4 @@
-import { createTeam, getTeams, getDetails } from '../data.js';
+import { createTeam, getTeams, getDetails, updateTeam } from '../data.js';
 import * as validate from '../validate.js';
 
 export async function details() {
@@ -13,7 +13,6 @@ export async function details() {
 
     const data = await getDetails(this.params.id);
     Object.assign(data, this.app.userData);
-    console.log(data);
 
     if (data.ownerId === this.app.userData.userId) {
         data.isAuthor = true;
@@ -33,10 +32,10 @@ export async function main() {
         footer: await this.load('./templates/common/footer.hbs'),
         team: await this.load('./templates/catalog/team.hbs'),
     };
-    const data = await getTeams();
-    Object.assign(data, this.app.userData);
+    const data = Object.assign({}, this.app.userData);
+    data.teams = await getTeams();
 
-    this.partial('./templates/catalog/teamCatalog.hbs', { teams: data });
+    this.partial('./templates/catalog/teamCatalog.hbs', data);
 }
 
 export async function create() {
@@ -76,9 +75,26 @@ export async function edit() {
         editForm: await this.load('./templates/edit/editForm.hbs')
     }
 
-    this.partial('./templates/edit/editPage.hbs', this.app.userData);
+    const data = Object.assign({}, this.app.userData);
+    data.id = this.params.id;
+    this.partial('./templates/edit/editPage.hbs', data);
 }
 
 export async function editPost() {
+    validate.auth();
 
+    const editTeam = {
+        name: this.params.name,
+        comment: this.params.comment
+    }
+
+    if (Object.entries(editTeam).some(v => v.length == 0)) {
+        alert('All fields are required!');
+        return;
+    }
+
+    const result = await updateTeam(this.params.id, editTeam);
+
+    validate.errors(result);
+    this.redirect('#/catalog');
 }

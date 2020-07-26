@@ -22,6 +22,19 @@ export async function getDetails(id) {
         .then(result => result.json()));
 }
 
+export async function createTeam(team) {
+    auth();
+
+    return (await fetch(host(endpoints.teams), {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'user-token': localStorage.getItem('userToken')
+        },
+        body: JSON.stringify(team)
+    })).json();
+}
+
 export async function register(username, password, repeatPassword) {
     return (await fetch(host(endpoints.register), {
         method: 'POST',
@@ -48,11 +61,11 @@ export async function login(username, password) {
     })).json();
 }
 
-export async function createTeam(team) {
+export async function updateTeam(id, team) {
     auth();
 
-    return (await fetch(host(endpoints.teams), {
-        method: 'POST',
+    return (await fetch(host(endpoints.details) + id, {
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
             'user-token': localStorage.getItem('userToken')
