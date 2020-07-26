@@ -3,5 +3,18 @@
         <h1>Register Page</h1>
             {{> registerForm}}
 </div>
+    <script>
+    $(() => {
+    let errorDisplay = document.getElementById('error');
+    const repeatPassword = document.getElementById('repeatPassword');
 
+    repeatPassword.addEventListener('change', function() {
+        if (document.getElementById('password').value != repeatPassword.value) {
+            errorDisplay.style.display = 'inline';
+        } else {
+            errorDisplay.style.display = 'none';
+        }
+    });
+})
+</script>
 {{> footer}}
