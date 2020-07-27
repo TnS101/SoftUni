@@ -1,0 +1,30 @@
+<div class="container">
+    {{> header}}
+    <div id="registerForm">
+            <h1>Register</h1>
+            <form action="#/register" method="POST">
+                <label>Username</label>
+                <input type="text" name="username" id="registerUsername">
+                <label>Password</label>
+                <input type="password" name="password" id="registerPassword">
+                <label>Repeat Password</label>
+                <input type="password" name="repeatPassword" id="registerRepeatPassword">
+                <input type="submit" value="Register">
+            </form>
+        </div>
+</div>
+
+        {{> footer}}
+
+        <script>
+    let errorDisplay = document.getElementById('error');
+    const repeatPassword = document.getElementById('repeatPassword');
+
+    repeatPassword.addEventListener('change', function() {
+        if (document.getElementById('password').value != repeatPassword.value) {
+            errorDisplay.style.display = 'inline';
+        } else {
+            errorDisplay.style.display = 'none';
+        }
+    });
+    </script>

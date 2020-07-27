@@ -1,0 +1,22 @@
+<div class="container">
+    {{>header}}
+<div id="deleteMovie">
+            <h1>Delete movie</h1>
+            <form action="#/delete/{{id}}" method="POST">
+                <label>Title</label>
+                <input type="text" name="title" value="{{name}}" disabled = "true">
+                <label>Image Url</label>
+                <input type="text" name="imageUrl" value="{{image}}" disabled="true">
+                <label>Description</label>
+                <textarea type="text" name="description" disabled="true">{{description}}</textarea>
+                <label>Genres</label>
+                <input type="text" name="genres" value="{{genres}}" disabled="true">
+                <label>Available Tickets</label>
+                <input type="number" name="tickets" value="{{tickets}}" disabled="true">
+                <input type="submit" value="Delete">
+            </form>
+        </div>
+</div>
+
+
+        {{>footer}}

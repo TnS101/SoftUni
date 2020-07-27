@@ -1,0 +1,24 @@
+<div class="container">
+    {{> header}}
+
+    <div id="myMovies">
+            <h1>My Movies</h1>
+            {{#each movies}}
+            <div class="movies">
+                <div class="movie">
+                    <h2>Title: {{title}}</h2>
+                    <img src="{{image}}">
+                    <p>Available Tickets: {{tickets}}</p>
+                    <div class="btn-group">
+                        <button><a href="#">Edit</a></button>
+                        <button><a href="#">Delete</a></button>
+                        <button><a href="#">Buy Ticket</a></button>
+                        <button><a href="#">Details</a></button>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+</div>
+
+        {{> footer}}
