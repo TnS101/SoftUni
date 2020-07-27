@@ -1,0 +1,1 @@
+import { getDetails, getMovies, createMovie, updateMovie } from '../data.js';

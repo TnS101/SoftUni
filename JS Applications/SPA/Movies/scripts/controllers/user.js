@@ -1,0 +1,58 @@
+import { login, register, logout } from '../data.js';
+import * as validate from '../validate.js';
+
+export async function loginGet() {
+    this.partials = {
+        header: await this.load('./templates/common/header.hbs'),
+        footer: await this.load('./templates/common/footer.hbs'),
+    };
+
+    this.partial('./templates/user/loginPage.hbs', this.app.userData);
+}
+
+export async function loginPost() {
+    const result = await login(this.params.username, this.params.password);
+
+    try {
+        if (result.hasOwnProperty('errorData')) {
+            const error = new Error();
+            Object.assign(error, result);
+            throw error;
+        }
+        this.app.userData.loggedIn = true;
+        this.app.userData.username = result.email;
+        this.app.userData.userId = result.objectId;
+
+        localStorage.setItem('userToken', result['user-token']);
+        localStorage.setItem('username', result.email);
+        localStorage.setItem('userId', result.objectId);
+
+        this.redirect('#/home');
+    } catch (error) {
+        alert(error.message);
+    }
+}
+
+export async function registerGet() {
+    this.partials = {
+        header: await this.load('./templates/common/header.hbs'),
+        footer: await this.load('./templates/common/footer.hbs'),
+    };
+    this.partial('./templates/user/registerPage.hbs', this.app.userData);
+}
+
+export async function registerPost() {
+    const result = await register(this.params.username, this.params.password);
+    validate.errors(result);
+    this.redirect('#/login');
+}
+
+export async function logoutPost() {
+    this.app.userData.loggedIn = false;
+    this.app.userData.username = '';
+
+    localStorage.removeItem('userToken');
+
+    await logout();
+    this.redirect('#/home');
+}
