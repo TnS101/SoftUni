@@ -1,6 +1,6 @@
 export function bulkGet(routes, action, context) {
-    routes.forEach(a => {
-        context.get(a, action)
+    routes.split(', ').forEach(a => {
+        context.get(a, action);
     });
 }
 

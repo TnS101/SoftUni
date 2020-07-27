@@ -22,8 +22,6 @@ export async function getDetails(id) {
 }
 
 export async function createMovie(movie) {
-    auth();
-
     return (await fetch(host(endpoints.movies), {
         method: 'POST',
         headers: {

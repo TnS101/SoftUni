@@ -11,12 +11,13 @@ $(() => {
             loggedIn: false
         }
 
-        routeHelper.bulkGet(['#/', '/', '#/home'], common.home, this);
+        routeHelper.bulkGet('#/, /, #/home', common.home, this);
 
         routeHelper.mirror('#/register', user.registerGet, user.registerPost, this);
         routeHelper.mirror('#/login', user.loginGet, user.loginPost, this);
 
         this.get('#/logout', user.logoutPost);
+        this.get('#/cinema', movie.cinema);
     });
 
     app.run();

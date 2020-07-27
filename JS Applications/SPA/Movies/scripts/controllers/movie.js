@@ -1,19 +1,19 @@
 import { getDetails, getMovies, createMovie, updateMovie, deleteMovie } from '../data.js';
 import * as validate from '../helpers/validate.js';
-import * as helper from '../helpers/partialHelper.js';
+import * as partial from '../helpers/partialHelper.js';
 
 export async function details() {
     validate.auth();
-    helper.headers;
+    await partial.headers(this);
 
-    renderPartial('./templates/movies/details.hbs', await getDetails());
+    partial.render('movies/details', await getDetails());
 }
 
 export async function cinema() {
     validate.auth();
-    await setPartials();
+    await partial.headers(this);
 
-    renderPartial('./templates/movies/allMoviesPage.hbs', await getMovies());
+    partial.render('movies/allMovies', this, await getMovies());
 }
 
 export async function myMovies() {
@@ -21,14 +21,14 @@ export async function myMovies() {
     const userId = localStorage.getItem('userId');
     const result = Array.from(await getMovies()).filter(e => e.ownerId == userId);
 
-    renderPartial('./templates/movies/myMoviesPage.hbs', result);
+    partial.render('movies/myMovies', result);
 }
 
 export async function createGet() {
     validate.auth();
-    await setPartials();
+    await partial.headers(this);
 
-    renderPartial('./templates/movies/createPage.hbs');
+    partial.render('movies/create', this);
 }
 
 export async function createPost() {
@@ -51,7 +51,7 @@ export async function createPost() {
 
 export async function updateGet() {
     validate.auth();
-    await setPartials();
+    await partial.headers(this);
 
-    renderPartial('./templates/movies/editPage.hbs');
+    partial.render('movies/edit', this);
 }

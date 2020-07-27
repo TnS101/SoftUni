@@ -4,7 +4,7 @@ import * as partial from '../helpers/partialHelper.js';
 
 export async function loginGet() {
     await partial.headers(this)
-    partial.render('./templates/user/loginPage.hbs', this);
+    partial.render('user/login', this);
 }
 
 export async function loginPost() {
@@ -25,7 +25,7 @@ export async function loginPost() {
 
 export async function registerGet() {
     await partial.headers(this);
-    partial.render('./templates/user/registerPage.hbs', this);
+    partial.render('user/register', this);
 }
 
 export async function registerPost() {
