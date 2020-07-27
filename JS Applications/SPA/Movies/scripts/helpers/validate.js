@@ -7,14 +7,11 @@ export function auth() {
 }
 
 export function errors(result) {
-    try {
-        if (result.hasOwnProperty('errorData')) {
-            const error = new Error();
-            Object.assign(error, result);
-            throw error;
-        }
-    } catch (error) {
+    if (result.hasOwnProperty('errorData')) {
+        const error = new Error();
+        Object.assign(error, result);
         alert(error.message);
+        throw error;
     }
 }
 

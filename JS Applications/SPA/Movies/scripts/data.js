@@ -1,4 +1,4 @@
-import { auth } from './validate.js';
+import { auth } from './helpers/validate.js';
 
 function host(endpoint) {
     return `https://api.backendless.com/1153E21E-ED05-694A-FFF8-3F806C43D700/2A03E960-280C-44BE-93E8-CEA8E7B84FC1/${endpoint}`

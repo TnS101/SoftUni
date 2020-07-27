@@ -1,8 +1,6 @@
-export async function home() {
-    this.partials = {
-        header: await this.load('./templates/common/header.hbs'),
-        footer: await this.load('./templates/common/footer.hbs')
-    }
+import * as helper from '../helpers/partialHelper.js';
 
-    this.partial('./templates/home/home.hbs', this.app.userData);
+export async function home() {
+    await helper.headers(this);
+    await helper.render('./templates/home/home.hbs', this);
 }

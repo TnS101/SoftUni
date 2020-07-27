@@ -1,44 +1,31 @@
 import { login, register, logout } from '../data.js';
-import * as validate from '../validate.js';
+import * as validate from '../helpers/validate.js';
+import * as partial from '../helpers/partialHelper.js';
 
 export async function loginGet() {
-    this.partials = {
-        header: await this.load('./templates/common/header.hbs'),
-        footer: await this.load('./templates/common/footer.hbs'),
-    };
-
-    this.partial('./templates/user/loginPage.hbs', this.app.userData);
+    await partial.headers(this)
+    partial.render('./templates/user/loginPage.hbs', this);
 }
 
 export async function loginPost() {
     const result = await login(this.params.username, this.params.password);
 
-    try {
-        if (result.hasOwnProperty('errorData')) {
-            const error = new Error();
-            Object.assign(error, result);
-            throw error;
-        }
-        this.app.userData.loggedIn = true;
-        this.app.userData.username = result.email;
-        this.app.userData.userId = result.objectId;
+    validate.errors(result);
 
-        localStorage.setItem('userToken', result['user-token']);
-        localStorage.setItem('username', result.email);
-        localStorage.setItem('userId', result.objectId);
+    this.app.userData.loggedIn = true;
+    this.app.userData.username = result.email;
+    this.app.userData.userId = result.objectId;
 
-        this.redirect('#/home');
-    } catch (error) {
-        alert(error.message);
-    }
+    localStorage.setItem('userToken', result['user-token']);
+    localStorage.setItem('username', result.email);
+    localStorage.setItem('userId', result.objectId);
+
+    this.redirect('#/home');
 }
 
 export async function registerGet() {
-    this.partials = {
-        header: await this.load('./templates/common/header.hbs'),
-        footer: await this.load('./templates/common/footer.hbs'),
-    };
-    this.partial('./templates/user/registerPage.hbs', this.app.userData);
+    await partial.headers(this);
+    partial.render('./templates/user/registerPage.hbs', this);
 }
 
 export async function registerPost() {
