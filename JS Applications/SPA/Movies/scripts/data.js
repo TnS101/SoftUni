@@ -17,8 +17,8 @@ export async function getMovies() {
 }
 
 export async function getDetails(id) {
-    return await (fetch(host(`${endpoints.movies}/${id}`)
-        .then(result => result.json())));
+    return await (fetch(host(`${endpoints.movies}/${id}`))
+        .then(result => result.json()));
 }
 
 export async function createMovie(movie) {

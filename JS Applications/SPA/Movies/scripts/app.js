@@ -1,7 +1,7 @@
 import * as common from './controllers/common.js';
 import * as user from './controllers/user.js';
 import * as movie from './controllers/movie.js';
-import * as routeHelper from './helpers/routeHelper.js';
+import * as router from './helpers/routeHelper.js';
 
 $(() => {
     const app = new Sammy('#main', function() {
@@ -11,13 +11,18 @@ $(() => {
             loggedIn: false
         }
 
-        routeHelper.bulkGet('#/, /, #/home', common.home, this);
+        router.bulkGet('#/, /, #/home', common.home, this);
 
-        routeHelper.mirror('#/register', user.registerGet, user.registerPost, this);
-        routeHelper.mirror('#/login', user.loginGet, user.loginPost, this);
+        router.mirror('#/register', user.registerGet, user.registerPost, this);
+        router.mirror('#/login', user.loginGet, user.loginPost, this);
+        router.mirror('#/create', movie.createGet, movie.createPost, this);
+        router.mirror('#/edit/:id', movie.updateGet, movie.updatePost, this);
 
         this.get('#/logout', user.logoutPost);
         this.get('#/cinema', movie.cinema);
+        this.get('#/myMovies', movie.myMovies);
+        this.get('#/details/:id', movie.details);
+        this.get('#/delete/:id', (ctx) => { movie.deletePost.call(ctx); });
     });
 
     app.run();

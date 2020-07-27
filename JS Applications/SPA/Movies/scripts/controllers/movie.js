@@ -6,7 +6,7 @@ export async function details() {
     validate.auth();
     await partial.headers(this);
 
-    partial.render('movies/details', await getDetails());
+    partial.render('movies/details', this, await getDetails(this.params.id));
 }
 
 export async function cinema() {
@@ -18,10 +18,13 @@ export async function cinema() {
 
 export async function myMovies() {
     validate.auth();
+    await partial.headers(this);
+
     const userId = localStorage.getItem('userId');
     const result = Array.from(await getMovies()).filter(e => e.ownerId == userId);
 
-    partial.render('movies/myMovies', result);
+    console.log({ movies: result });
+    partial.render('movies/myMovies', this, { movies: result });
 }
 
 export async function createGet() {
@@ -39,19 +42,51 @@ export async function createPost() {
         description: this.params.description,
         image: this.params.image,
         genres: this.params.genres,
-        tickets: this.params.tickets
+        tickets: parseInt(this.params.tickets)
     }
 
     validate.fields(movie);
+
     const result = await createMovie(movie);
+
     validate.errors(result);
 
-    this.redirect('#/myMovies');
+    this.redirect('#/home');
 }
 
 export async function updateGet() {
     validate.auth();
     await partial.headers(this);
 
-    partial.render('movies/edit', this);
+    const movie = await getDetails(this.params.id);
+
+    partial.render('movies/edit', this, movie);
+}
+
+export async function updatePost() {
+    validate.auth();
+
+    const movie = {
+        name: this.params.name,
+        description: this.params.description,
+        image: this.params.image,
+        genres: this.params.genres,
+        tickets: parseInt(this.params.tickets)
+    }
+
+    validate.fields(movie);
+
+    const result = await updateMovie(this.params.id, movie);
+
+    validate.errors(result);
+
+    this.redirect('#/myMovies');
+}
+
+export async function deletePost() {
+    validate.auth();
+
+    const result = await deleteMovie(this.params.id);
+    validate.errors(result);
+    this.redirect('#/myMovies');
 }

@@ -6,14 +6,14 @@
             {{#each movies}}
             <div class="movies">
                 <div class="movie" id = "{{objectId}}">
-                    <h2>Title: {{title}}</h2>
+                    <h2>Title: {{name}}</h2>
                     <img src="{{image}}">
                     <p>Available Tickets: {{tickets}}</p>
                     <div class="btn-group">
-                        <button><a href="#">Edit</a></button>
-                        <button><a href="#">Delete</a></button>
+                        <button><a href="#/edit/{{objectId}}">Edit</a></button>
+                        <button><a href="#/delete/{{objectId}}">Delete</a></button>
                         <button><a href="#">Buy Ticket</a></button>
-                        <button><a href="#">Details</a></button>
+                        <button><a href="#/details/{{objectId}}">Details</a></button>
                     </div>
                 </div>
             </div>

@@ -7,5 +7,5 @@ export async function headers(context) {
 
 export function render(input, context, data) {
     const path = `./templates/${input}.hbs`;
-    return data == undefined ? context.partial(path, context.app.userData) : context.partial(path, Object.assign(data, context.app.userData));
+    return data == undefined ? context.partial(path, context.app.userData) : context.partial(path, Object.assign(context.app.userData, data));
 }
