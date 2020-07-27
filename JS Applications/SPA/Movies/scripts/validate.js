@@ -17,3 +17,10 @@ export function errors(result) {
         alert(error.message);
     }
 }
+
+export function fields(input) {
+    if (Object.entries(input).some(v => v.length == 0)) {
+        alert('All fields are required!');
+        return;
+    }
+}

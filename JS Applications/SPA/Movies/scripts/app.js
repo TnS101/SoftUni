@@ -1,5 +1,6 @@
 import * as common from './controllers/common.js';
 import * as user from './controllers/user.js';
+import * as movie from './controllers/movie.js';
 
 $(() => {
     const app = new Sammy('#main', function() {
@@ -17,6 +18,8 @@ $(() => {
 
         this.get('#/login', user.loginGet);
         this.post('#/login', (ctx) => { user.loginPost.call(ctx); });
+
+        this.get('#/logout', user.logoutPost);
     });
 
     app.run();
