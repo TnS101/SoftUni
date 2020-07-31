@@ -1,0 +1,11 @@
+C:\Users\PC\source\repos\Advanced\Sets and cits-ex 6\Sets and cits-ex 6\bin\Debug\netcoreapp2.1\Sets and cits-ex 6.deps.json
+C:\Users\PC\source\repos\Advanced\Sets and cits-ex 6\Sets and cits-ex 6\bin\Debug\netcoreapp2.1\Sets and cits-ex 6.runtimeconfig.json
+C:\Users\PC\source\repos\Advanced\Sets and cits-ex 6\Sets and cits-ex 6\bin\Debug\netcoreapp2.1\Sets and cits-ex 6.runtimeconfig.dev.json
+C:\Users\PC\source\repos\Advanced\Sets and cits-ex 6\Sets and cits-ex 6\bin\Debug\netcoreapp2.1\Sets and cits-ex 6.dll
+C:\Users\PC\source\repos\Advanced\Sets and cits-ex 6\Sets and cits-ex 6\bin\Debug\netcoreapp2.1\Sets and cits-ex 6.pdb
+C:\Users\PC\source\repos\Advanced\Sets and cits-ex 6\Sets and cits-ex 6\obj\Debug\netcoreapp2.1\Sets and cits-ex 6.csprojAssemblyReference.cache
+C:\Users\PC\source\repos\Advanced\Sets and cits-ex 6\Sets and cits-ex 6\obj\Debug\netcoreapp2.1\Sets and cits-ex 6.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\Advanced\Sets and cits-ex 6\Sets and cits-ex 6\obj\Debug\netcoreapp2.1\Sets and cits-ex 6.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\Advanced\Sets and cits-ex 6\Sets and cits-ex 6\obj\Debug\netcoreapp2.1\Sets and cits-ex 6.AssemblyInfo.cs
+C:\Users\PC\source\repos\Advanced\Sets and cits-ex 6\Sets and cits-ex 6\obj\Debug\netcoreapp2.1\Sets and cits-ex 6.dll
+C:\Users\PC\source\repos\Advanced\Sets and cits-ex 6\Sets and cits-ex 6\obj\Debug\netcoreapp2.1\Sets and cits-ex 6.pdb

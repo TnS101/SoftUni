@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.539
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Тhe Final UQuest", "Тhe Final UQuest\Тhe Final UQuest.csproj", "{B084739B-4A13-40F8-B17F-099F9BFB930F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B084739B-4A13-40F8-B17F-099F9BFB930F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B084739B-4A13-40F8-B17F-099F9BFB930F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B084739B-4A13-40F8-B17F-099F9BFB930F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B084739B-4A13-40F8-B17F-099F9BFB930F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E11479D-5033-45B1-B3A8-F6A118676E5D}
+	EndGlobalSection
+EndGlobal

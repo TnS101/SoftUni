@@ -1,0 +1,11 @@
+C:\Users\PC\source\repos\Phone Number Generator\Phone Number Generator\bin\Debug\netcoreapp2.1\Phone Number Generator.deps.json
+C:\Users\PC\source\repos\Phone Number Generator\Phone Number Generator\bin\Debug\netcoreapp2.1\Phone Number Generator.runtimeconfig.json
+C:\Users\PC\source\repos\Phone Number Generator\Phone Number Generator\bin\Debug\netcoreapp2.1\Phone Number Generator.runtimeconfig.dev.json
+C:\Users\PC\source\repos\Phone Number Generator\Phone Number Generator\bin\Debug\netcoreapp2.1\Phone Number Generator.dll
+C:\Users\PC\source\repos\Phone Number Generator\Phone Number Generator\bin\Debug\netcoreapp2.1\Phone Number Generator.pdb
+C:\Users\PC\source\repos\Phone Number Generator\Phone Number Generator\obj\Debug\netcoreapp2.1\Phone Number Generator.csprojAssemblyReference.cache
+C:\Users\PC\source\repos\Phone Number Generator\Phone Number Generator\obj\Debug\netcoreapp2.1\Phone Number Generator.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\Phone Number Generator\Phone Number Generator\obj\Debug\netcoreapp2.1\Phone Number Generator.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\Phone Number Generator\Phone Number Generator\obj\Debug\netcoreapp2.1\Phone Number Generator.AssemblyInfo.cs
+C:\Users\PC\source\repos\Phone Number Generator\Phone Number Generator\obj\Debug\netcoreapp2.1\Phone Number Generator.dll
+C:\Users\PC\source\repos\Phone Number Generator\Phone Number Generator\obj\Debug\netcoreapp2.1\Phone Number Generator.pdb

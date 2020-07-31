@@ -1,0 +1,11 @@
+c:\users\pc\source\repos\Tech\Replace Repeating chars\Replace Repeating chars\bin\Debug\netcoreapp2.1\Replace Repeating chars.deps.json
+c:\users\pc\source\repos\Tech\Replace Repeating chars\Replace Repeating chars\bin\Debug\netcoreapp2.1\Replace Repeating chars.runtimeconfig.json
+c:\users\pc\source\repos\Tech\Replace Repeating chars\Replace Repeating chars\bin\Debug\netcoreapp2.1\Replace Repeating chars.runtimeconfig.dev.json
+c:\users\pc\source\repos\Tech\Replace Repeating chars\Replace Repeating chars\bin\Debug\netcoreapp2.1\Replace Repeating chars.dll
+c:\users\pc\source\repos\Tech\Replace Repeating chars\Replace Repeating chars\bin\Debug\netcoreapp2.1\Replace Repeating chars.pdb
+c:\users\pc\source\repos\Tech\Replace Repeating chars\Replace Repeating chars\obj\Debug\netcoreapp2.1\Replace Repeating chars.csproj.CoreCompileInputs.cache
+c:\users\pc\source\repos\Tech\Replace Repeating chars\Replace Repeating chars\obj\Debug\netcoreapp2.1\Replace Repeating chars.AssemblyInfoInputs.cache
+c:\users\pc\source\repos\Tech\Replace Repeating chars\Replace Repeating chars\obj\Debug\netcoreapp2.1\Replace Repeating chars.AssemblyInfo.cs
+c:\users\pc\source\repos\Tech\Replace Repeating chars\Replace Repeating chars\obj\Debug\netcoreapp2.1\Replace Repeating chars.dll
+c:\users\pc\source\repos\Tech\Replace Repeating chars\Replace Repeating chars\obj\Debug\netcoreapp2.1\Replace Repeating chars.pdb
+C:\Users\PC\source\repos\Tech\Replace Repeating chars\Replace Repeating chars\obj\Debug\netcoreapp2.1\Replace Repeating chars.csprojAssemblyReference.cache

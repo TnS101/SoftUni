@@ -1,0 +1,13 @@
+C:\Users\PC\source\repos\Streams ex-3\Streams ex-3\bin\Debug\netcoreapp2.1\text.txt
+C:\Users\PC\source\repos\Streams ex-3\Streams ex-3\bin\Debug\netcoreapp2.1\words.txt
+C:\Users\PC\source\repos\Streams ex-3\Streams ex-3\bin\Debug\netcoreapp2.1\Streams ex-3.deps.json
+C:\Users\PC\source\repos\Streams ex-3\Streams ex-3\bin\Debug\netcoreapp2.1\Streams ex-3.runtimeconfig.json
+C:\Users\PC\source\repos\Streams ex-3\Streams ex-3\bin\Debug\netcoreapp2.1\Streams ex-3.runtimeconfig.dev.json
+C:\Users\PC\source\repos\Streams ex-3\Streams ex-3\bin\Debug\netcoreapp2.1\Streams ex-3.dll
+C:\Users\PC\source\repos\Streams ex-3\Streams ex-3\bin\Debug\netcoreapp2.1\Streams ex-3.pdb
+C:\Users\PC\source\repos\Streams ex-3\Streams ex-3\obj\Debug\netcoreapp2.1\Streams ex-3.csprojAssemblyReference.cache
+C:\Users\PC\source\repos\Streams ex-3\Streams ex-3\obj\Debug\netcoreapp2.1\Streams ex-3.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\Streams ex-3\Streams ex-3\obj\Debug\netcoreapp2.1\Streams ex-3.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\Streams ex-3\Streams ex-3\obj\Debug\netcoreapp2.1\Streams ex-3.AssemblyInfo.cs
+C:\Users\PC\source\repos\Streams ex-3\Streams ex-3\obj\Debug\netcoreapp2.1\Streams ex-3.dll
+C:\Users\PC\source\repos\Streams ex-3\Streams ex-3\obj\Debug\netcoreapp2.1\Streams ex-3.pdb

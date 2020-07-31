@@ -1,0 +1,43 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Application.Cart.Queries.CakeCartListViewModel
+@{
+    ViewData["Title"] = "Cart";
+}
+<head>
+    <title>
+        Cart
+    </title>
+</head>
+<body class="page-template-default page page-id-43 logged-in admin-bar custom-background custom-background-image custom-background-color full-width customize-support about-body large-text">
+    <partial name="_NavBar">
+        <div class="blog-section cart-blog-section">
+            <p>Total bill : @Model.Cakes.Sum(c => c.Price).00 $ (@Model.Cakes.Count() product(s))</p>
+            <a asp-controller="Cake" asp-action="Buy" method="delete"><i class="fas fa-truck-moving ultra-large-text"></i></a>
+        </div>
+        <div class="blog-section cart-blog-section">
+            <label>Clear Cart</label>
+            <p></p>
+            <a asp-controller="Cake" asp-action="RemoveAll" method="post"><i class="fas fa-trash-alt ultra-large-text"></i></a>
+        </div>
+        
+        <main class="cart-main">
+            @{
+                foreach (var cake in Model.Cakes)
+                {
+                    <div class="entry-content cart-entry-content">
+                        <div class="blog-section cart-blog-section-main">
+
+                            <p>@cake.Name - @cake.Price.00 $</p> <a asp-controller="Cake" asp-action="RemoveCake" asp-route-id="@cake.Id" method="delete">
+                                <i class="fas fa-times-circle large-text"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <hr>
+                }
+            }
+        </main>
+</body>
+<br />
+<footer>
+    <partial name="_Footer">
+</footer>

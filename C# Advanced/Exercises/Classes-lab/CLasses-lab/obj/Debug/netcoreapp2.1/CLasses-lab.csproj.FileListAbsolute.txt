@@ -1,0 +1,11 @@
+C:\Users\PC\source\repos\Advanced\CLasses-lab\CLasses-lab\bin\Debug\netcoreapp2.1\CLasses-lab.deps.json
+C:\Users\PC\source\repos\Advanced\CLasses-lab\CLasses-lab\bin\Debug\netcoreapp2.1\CLasses-lab.runtimeconfig.json
+C:\Users\PC\source\repos\Advanced\CLasses-lab\CLasses-lab\bin\Debug\netcoreapp2.1\CLasses-lab.runtimeconfig.dev.json
+C:\Users\PC\source\repos\Advanced\CLasses-lab\CLasses-lab\bin\Debug\netcoreapp2.1\CLasses-lab.dll
+C:\Users\PC\source\repos\Advanced\CLasses-lab\CLasses-lab\bin\Debug\netcoreapp2.1\CLasses-lab.pdb
+C:\Users\PC\source\repos\Advanced\CLasses-lab\CLasses-lab\obj\Debug\netcoreapp2.1\CLasses-lab.csprojAssemblyReference.cache
+C:\Users\PC\source\repos\Advanced\CLasses-lab\CLasses-lab\obj\Debug\netcoreapp2.1\CLasses-lab.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\Advanced\CLasses-lab\CLasses-lab\obj\Debug\netcoreapp2.1\CLasses-lab.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\Advanced\CLasses-lab\CLasses-lab\obj\Debug\netcoreapp2.1\CLasses-lab.AssemblyInfo.cs
+C:\Users\PC\source\repos\Advanced\CLasses-lab\CLasses-lab\obj\Debug\netcoreapp2.1\CLasses-lab.dll
+C:\Users\PC\source\repos\Advanced\CLasses-lab\CLasses-lab\obj\Debug\netcoreapp2.1\CLasses-lab.pdb

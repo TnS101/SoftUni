@@ -1,0 +1,37 @@
+﻿namespace WebApplication1.Persistance
+{
+    using Application.Common.Interfaces;
+    using Domain.Entities;
+    using Microsoft.EntityFrameworkCore;
+
+    public class WebsiteDbContext : DbContext, IWebsiteDbContext
+    {
+        public WebsiteDbContext()
+        {
+        }
+
+        public WebsiteDbContext(DbContextOptions options)
+            : base(options) { }
+
+        public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<Cake> Cakes { get; set; }
+
+        public DbSet<Comment> Comments { get; set; }
+
+        public DbSet<Topic> Topics { get; set; }
+
+        public DbSet<Reply> Replies { get; set; }
+
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+
+        public DbSet<Employee> Employees { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+        }
+    }
+}

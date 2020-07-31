@@ -1,0 +1,11 @@
+c:\users\pc\source\repos\Tech\Тhe Final UQuest\Тhe Final UQuest\bin\Debug\netcoreapp2.1\Тhe Final UQuest.deps.json
+c:\users\pc\source\repos\Tech\Тhe Final UQuest\Тhe Final UQuest\bin\Debug\netcoreapp2.1\Тhe Final UQuest.runtimeconfig.json
+c:\users\pc\source\repos\Tech\Тhe Final UQuest\Тhe Final UQuest\bin\Debug\netcoreapp2.1\Тhe Final UQuest.runtimeconfig.dev.json
+c:\users\pc\source\repos\Tech\Тhe Final UQuest\Тhe Final UQuest\bin\Debug\netcoreapp2.1\Тhe Final UQuest.dll
+c:\users\pc\source\repos\Tech\Тhe Final UQuest\Тhe Final UQuest\bin\Debug\netcoreapp2.1\Тhe Final UQuest.pdb
+c:\users\pc\source\repos\Tech\Тhe Final UQuest\Тhe Final UQuest\obj\Debug\netcoreapp2.1\Тhe Final UQuest.csprojAssemblyReference.cache
+c:\users\pc\source\repos\Tech\Тhe Final UQuest\Тhe Final UQuest\obj\Debug\netcoreapp2.1\Тhe Final UQuest.csproj.CoreCompileInputs.cache
+c:\users\pc\source\repos\Tech\Тhe Final UQuest\Тhe Final UQuest\obj\Debug\netcoreapp2.1\Тhe Final UQuest.AssemblyInfoInputs.cache
+c:\users\pc\source\repos\Tech\Тhe Final UQuest\Тhe Final UQuest\obj\Debug\netcoreapp2.1\Тhe Final UQuest.AssemblyInfo.cs
+c:\users\pc\source\repos\Tech\Тhe Final UQuest\Тhe Final UQuest\obj\Debug\netcoreapp2.1\Тhe Final UQuest.dll
+c:\users\pc\source\repos\Tech\Тhe Final UQuest\Тhe Final UQuest\obj\Debug\netcoreapp2.1\Тhe Final UQuest.pdb

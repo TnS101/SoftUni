@@ -1,0 +1,30 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Application.Forum.Queries.CustomerTopicsListViewModel
+<head>
+    <title>Your Topics</title>
+</head>
+<body class="page-template-default page page-id-43 logged-in admin-bar custom-background custom-background-image custom-background-color full-width customize-support about-body">
+    <partial name="_ForumNavBar">
+        @foreach (var topic in @Model.Topics)
+        {
+            <div class="entry-content large-text customer-topics-entry-content" itemprop="text">
+                <div class="blog-section customer-topics-blog-section">
+                    <p class="customer-topics-paragraph">
+                        [@topic.Category] @topic.Name
+                        <i class="fas fa-heart"></i>
+                        @topic.Likes
+                        <i class="fas fa-comments"></i> @topic.CommentsCount
+                        <br />
+                        <a asp-controller="Forum" asp-action="RemoveTopic" asp-route-id="@topic.Id"><i class="fas fa-trash-alt large-text remove-topic"></i></a>
+                        <a asp-controller="Forum" asp-action="EditTopic" asp-route-id="@topic.Id"><i class="fas fa-edit large-text"></i></a>
+                    </p>
+                </div>
+            </div>
+            <br />
+        }
+</body>
+<footer>
+    <partial name="_Footer" />
+</footer>
+
+

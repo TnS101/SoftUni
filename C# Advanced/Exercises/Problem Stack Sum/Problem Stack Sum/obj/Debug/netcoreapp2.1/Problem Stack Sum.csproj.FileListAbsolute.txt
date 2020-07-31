@@ -1,0 +1,11 @@
+C:\Users\PC\source\repos\Advanced\Problem Stack Sum\Problem Stack Sum\bin\Debug\netcoreapp2.1\Problem Stack Sum.deps.json
+C:\Users\PC\source\repos\Advanced\Problem Stack Sum\Problem Stack Sum\bin\Debug\netcoreapp2.1\Problem Stack Sum.runtimeconfig.json
+C:\Users\PC\source\repos\Advanced\Problem Stack Sum\Problem Stack Sum\bin\Debug\netcoreapp2.1\Problem Stack Sum.runtimeconfig.dev.json
+C:\Users\PC\source\repos\Advanced\Problem Stack Sum\Problem Stack Sum\bin\Debug\netcoreapp2.1\Problem Stack Sum.dll
+C:\Users\PC\source\repos\Advanced\Problem Stack Sum\Problem Stack Sum\bin\Debug\netcoreapp2.1\Problem Stack Sum.pdb
+C:\Users\PC\source\repos\Advanced\Problem Stack Sum\Problem Stack Sum\obj\Debug\netcoreapp2.1\Problem Stack Sum.csprojAssemblyReference.cache
+C:\Users\PC\source\repos\Advanced\Problem Stack Sum\Problem Stack Sum\obj\Debug\netcoreapp2.1\Problem Stack Sum.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\Advanced\Problem Stack Sum\Problem Stack Sum\obj\Debug\netcoreapp2.1\Problem Stack Sum.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\Advanced\Problem Stack Sum\Problem Stack Sum\obj\Debug\netcoreapp2.1\Problem Stack Sum.AssemblyInfo.cs
+C:\Users\PC\source\repos\Advanced\Problem Stack Sum\Problem Stack Sum\obj\Debug\netcoreapp2.1\Problem Stack Sum.dll
+C:\Users\PC\source\repos\Advanced\Problem Stack Sum\Problem Stack Sum\obj\Debug\netcoreapp2.1\Problem Stack Sum.pdb

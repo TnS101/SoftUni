@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dictionary-rewind 2", "Dictionary-rewind 2\Dictionary-rewind 2.csproj", "{CCC9D75D-76E0-4C6A-B3CB-76AA0406081B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCC9D75D-76E0-4C6A-B3CB-76AA0406081B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCC9D75D-76E0-4C6A-B3CB-76AA0406081B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCC9D75D-76E0-4C6A-B3CB-76AA0406081B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCC9D75D-76E0-4C6A-B3CB-76AA0406081B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94CFC11F-8715-43B5-BD65-0DE474F8DFD2}
+	EndGlobalSection
+EndGlobal

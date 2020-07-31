@@ -1,0 +1,34 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Application.Forum.Queries.TopicListViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+<head>
+    <title>Forum</title>
+</head>
+
+<body class="page-template-default page page-id-43 logged-in admin-bar custom-background custom-background-image custom-background-color full-width customize-support about-body">
+    <partial name="_ForumNavBar">
+        <h1 class="site-header home-entry-header">Topics</h1>
+        @foreach (var topic in Model.Topics)
+        {
+            <div class="entry-content home-entry-content" itemprop="text">
+                <div class="blog-section home-blog-content">
+                    <p class="home-paragraph">
+                        [@topic.Category] @topic.Name by @topic.CustomerName <a asp-controller="Forum" asp-action="LikeTopic" asp-route-id="@topic.Id">
+                            <i class="fas fa-heart"></i></a>
+                        @topic.Likes <a asp-controller="Forum" asp-action="CurrentTopic" asp-route-id="@topic.Id"><i class="fas fa-location-arrow current-topic"></i></a>
+                        <a asp-controller="Forum" asp-action="CurrentTopic" asp-route-id="@topic.Id"><i class="fas fa-comments"></i></a>
+                        @topic.CommentCount
+                    </p>
+                </div>
+            </div>
+            <br />
+        }
+</body>
+
+
+<footer>
+    <partial name="_Footer">
+</footer>
+
