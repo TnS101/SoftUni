@@ -1,0 +1,16 @@
+{
+    "name": "htmlRender",
+    "version": "1.0.0",
+    "description": "",
+    "main": "start.js",
+    "scripts": {
+        "start": "node start.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.16.4",
+        "heroku": "^7.42.6"
+    }
+}

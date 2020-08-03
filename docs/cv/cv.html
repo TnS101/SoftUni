@@ -1,0 +1,107 @@
+<head>
+    <link rel="stylesheet" href="sty.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+
+<body>
+    <div class="section heading">
+        <h1 style="text-align: center; margin-top: 30px;">Curriculum Vitae</h1>
+    </div>
+    <div class="wrapper">
+        <div class="main">
+            <img class="image-frame" src="https://avatars0.githubusercontent.com/u/54761133?s=460&u=2cc0ecd80a420475409a561b8749cb93d6d2d900&v=4" alt="" width="180em" height="100em" style="border-radius: 50%;">
+            <br>
+            <div class="par">
+                <h2 style="margin-top: 8px; float:initial; margin-left:32%">Personal Info <i onclick="show('personal')" id="personal" style="margin-left: 35%; cursor: pointer;" class="fas fa-chevron-down"></i></h2>
+            </div>
+
+            <div class="section slide-in-bck-center" id='personal-panel' style="display: none;">
+                <div class="text">
+                    <h2>Name :
+                        <span>Hristo Todorov</span>
+                    </h2>
+                    <h2>Age : <span>20</span></h2>
+                    <h2>Email : <span>ezvid99@gmail.com</span> </h2>
+                    <h2>Phone Number : <span>0884405938</span> </h2>
+                    <h2>Living in : <span>Sofia, Bulgaria</span> </h2>
+                    <a href="https://github.com/TnS101"><i style="color:black" class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/hristo-todorov-4500691b1/"><i style="color: #0077b5;" class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/hristo.todorov.33/"><i style="color: #0980ec;" class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <div class="par">
+                <h2 style="margin-top: 8px; float:initial; margin-left:35%">Tech Stack <i onclick="show('tech')" id="tech" style="margin-left: 42%; cursor: pointer;" class="fas fa-chevron-down"></i></h2>
+            </div>
+
+            <div class="section slide-in-bck-center" id='tech-panel' style="display: none;">
+                <div class="text">
+                    <h2><span style="color:purple"><i class="fab fa-windows"></i>.NET</span> (OOP, C#, ASP.NET Core/MVC, EF Core, MS SQL Server);</h2>
+                    <h2><span style="color:orange"><i class="fab fa-js"></i>JavaScript</span> (Node.js, jQuery, AJAX, Express.js, MongoDB, Mongoose ODM);</h2>
+                    <h2><span style="color:#e34c26"><i class="fab fa-html5"></i>Front-End</span> (HTML5, CSS3);</h2>
+                </div>
+            </div>
+
+            <div class="par">
+                <h2 style="margin-top: 8px; float:initial; margin-left:25%">Tech Skills Evaluation <i onclick="show('tech-skills')" id="tech-skills" style="margin-left: 19%; cursor: pointer;" class="fas fa-chevron-down"></i></h2>
+            </div>
+
+            <div class="section slide-in-bck-center" id='tech-skills-panel' style="display: none;">
+                <div class="text">
+                    <h2>C#</h2>
+                    <div class="bar-frame">
+                        <div class="c-bar"></div>
+                    </div>
+                    <h2>ASP.NET Core</h2>
+                    <div class="bar-frame">
+                        <div class="asp-bar"></div>
+                    </div>
+                    <h2>Databases</h2>
+                    <div class="bar-frame">
+                        <div class="db-bar"></div>
+                    </div>
+                    <h2>Node.js</h2>
+                    <div class="bar-frame">
+                        <div class="node-bar" style="width: 95%;"></div>
+                    </div>
+                    <h2>VanillaJS</h2>
+                    <div class="bar-frame">
+                        <div class="van-bar" style="width: 85%;"></div>
+                    </div>
+                    <h2>jQuery</h2>
+                    <div class="bar-frame">
+                        <div class="asp-bar" style="width: 90%;"></div>
+                    </div>
+                    <h2><span>Combinatory of HTML5 and CSS3 : </span>92%</h2>
+                    <br>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+<script>
+    function show(id) {
+        const clicked = document.getElementById(`${id}`);
+        const section = document.getElementById(`${clicked.id}-panel`);
+
+        section.style.display = 'block';
+        clicked.className = 'fas fa-times';
+
+        clicked.onclick = function() {
+            return false;
+        };
+
+        clicked.onclick = function hide(e) {
+            e.preventDefault();
+            section.style.display = 'none';
+            clicked.className = 'fas fa-chevron-down';
+            clicked.onclick = function() {
+                return show(id);
+            }
+        }
+    }
+</script>
