@@ -1,0 +1,19 @@
+﻿@model System.Security.Claims.ClaimsPrincipal
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (String.IsNullOrWhiteSpace(Model.Identity.Name))
+{
+    await Html.RenderPartialAsync("_GuestBar");
+    <div class="text-center">
+        <h1 class="display-4">Please, login for further info.</h1>
+    </div>
+}
+else
+{
+    await Html.RenderPartialAsync("_UserBar");
+    <div class="text-center">
+        <h1 class="display-4">Welcome @Model.Identity.Name!</h1>
+    </div>
+}
