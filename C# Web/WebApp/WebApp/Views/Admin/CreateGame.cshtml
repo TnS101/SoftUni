@@ -1,0 +1,17 @@
+﻿<partial name="_AdminBar">
+    <h1>Create a Game!</h1>
+
+    <form asp-controller="Admin" asp-action="CreateGame" method="post">
+        <h1>Title:</h1>
+        <input type="text" name="title" value="" />
+        <h1>Description:</h1>
+        <input type="text" name="description" value="" />
+        <h1>Price:</h1>
+        <input type="number" name="price" value="" />
+        <h1>Released On:</h1>
+        <input type="datetime" name="releasedOn" value="" />
+        <h1>Image URL:</h1>
+        <input type="text" name="imageURL" value="" />
+        <br />
+        <input type="submit" name="Submit" value="Create" />
+    </form>

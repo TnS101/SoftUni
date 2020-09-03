@@ -1,9 +1,9 @@
-﻿@model System.Security.Claims.ClaimsPrincipal
+﻿@model WebApp.Data.Entities.User
 @{
     ViewData["Title"] = "Home Page";
 }
 
-@if (String.IsNullOrWhiteSpace(Model.Identity.Name))
+@if (Model == null)
 {
     await Html.RenderPartialAsync("_GuestBar");
     <div class="text-center">
@@ -12,8 +12,18 @@
 }
 else
 {
-    await Html.RenderPartialAsync("_UserBar");
-    <div class="text-center">
-        <h1 class="display-4">Welcome @Model.Identity.Name!</h1>
-    </div>
+    if (Model.IsAdmin)
+    {
+        await Html.RenderPartialAsync("_AdminBar");
+        <div class="text-center">
+            <h1 class="display-4">Welcome Admin!</h1>
+        </div>
+    }
+    else
+    {
+        await Html.RenderPartialAsync("_UserBar");
+        <div class="text-center">
+            <h1 class="display-4">Welcome @Model.FullName!</h1>
+        </div>
+    }
 }

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WebApp.Data.Entities.Game>
+<h1>Your Wishlist: </h1>
+
+<div>
+    @foreach (var game in Model)
+    {
+        <p>Title : @game.Title</p>
+        <p>Description : @game.Description</p>
+        <p>Price : @game.Price</p>
+        <p>ReleasedOn : @game.ReleaseDate</p>
+        <img src="@game.ImageURL" alt="Image" />
+
+        <br />
+        <hr />
+        <div>
+            <form asp-controller="User" asp-action="Buy" method="post">
+                <input type="hidden" name="gameId" value="@game.Id" />
+                <input type="submit" name="name" value="Buy" />
+            </form>
+        </div>
+        <br />
+        <div>
+            <form asp-controller="User" asp-action="RemoveFromWishList" method="post">
+                <input type="hidden" name="gameId" value="@game.Id" />
+                <input type="submit" name="name" value="Remove" />
+            </form>
+        </div>
+    }
+</div>

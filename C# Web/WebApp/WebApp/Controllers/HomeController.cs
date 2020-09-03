@@ -1,16 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+using WebApp.Services.Users;
 
 namespace WebApp.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        public HomeController()
+        private readonly IUserService userService;
+        public HomeController(IUserService userService)
         {
+            this.userService = userService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(this.User);
+            return View(await this.userService.GetInfo(this.UserManager.GetUserId(this.User)));
         }
     }
 }

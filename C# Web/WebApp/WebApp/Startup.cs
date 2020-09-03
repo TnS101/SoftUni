@@ -1,18 +1,20 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using WebApp.Data;
-using WebApp.Data.Entities;
-using WebApp.Models;
-
 namespace WebApp
 {
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
+    using WebApp.Data;
+    using WebApp.Data.Entities;
+    using WebApp.Models;
+    using WebApp.Services.Games;
+    using WebApp.Services.Users;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -24,7 +26,11 @@ namespace WebApp
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            //Custom
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IGameService, GameService>();
+
+            //Mapper
             services.AddAutoMapper(typeof(Startup));
 
             var mapConfig = new MapperConfiguration(mc =>
@@ -35,16 +41,16 @@ namespace WebApp
             IMapper mapper = mapConfig.CreateMapper();
             services.AddSingleton(mapper);
 
-            services.AddDbContext<AppContext>(opt => opt.UseSqlServer("Server=.;Database=App;Integrated Security=True;MultipleActiveResultSets=true;"));
+            //Context
+            services.AddDbContext<AppContext>(opt => opt.UseSqlServer("Server=.;Database=App;Integrated Security=True;MultipleActiveResultSets=true;"))
+                .AddScoped<IAppContext,AppContext>();
 
             services.AddControllersWithViews(options =>
             {
                 options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
             });
-            services.AddMvc();
 
             //Identity
-
             services.AddDefaultIdentity<User>(options =>
             {
                 options.Password.RequireDigit = false;
@@ -58,6 +64,8 @@ namespace WebApp
             .AddDefaultUI()
             .AddEntityFrameworkStores<AppContext>();
 
+            services.AddControllersWithViews();
+            services.AddMvc();
             services.AddAuthorization();
             services.AddRazorPages();
         }
