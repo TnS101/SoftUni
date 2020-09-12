@@ -18,33 +18,26 @@
         [Route("Cake/Add")]
         public async Task<IActionResult> Add()
         {
-            return Ok(await Mediator.Send(new GetAllCakesQuery()));
+            return this.View(await Mediator.Send(new GetAllCakesQuery()));
         }
 
         [HttpGet("Cake/Submitted")]
         [Route("Cake/Submitted")]
-        public async Task<IActionResult> Submitted([FromQuery]int cakeId)
+        public async Task<IActionResult> Submitted([FromQuery] int cakeId)
         {
-            return Ok(await Mediator.Send(new CreateCakeCommand{ Id = cakeId }));
+            return this.View(await Mediator.Send(new CreateCakeCommand { Id = cakeId }));
         }
 
         [HttpGet("Cake/Cart")]
         [Route("Cake/Cart")]
         public async Task<IActionResult> Cart()
         {
-            if (true)
-            {
-                return Ok(await Mediator.Send(new CakeCartQuery { Id = 1 }));
-            }
-            else
-            {
-                return Redirect(@"\CartError");
-            }
+            return this.View(await Mediator.Send(new CakeCartQuery { Id = 1 }));
         }
 
         [HttpDelete("Cake/RemoveCake")]
         [Route("Cake/RemoveCake")]
-        public async Task<IActionResult> RemoveCake([FromQuery]int cakeId)
+        public async Task<IActionResult> RemoveCake([FromQuery] int cakeId)
         {
             await Mediator.Send(new RemoveCakeCommand { Id = cakeId });
 
