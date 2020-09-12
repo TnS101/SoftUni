@@ -9,19 +9,17 @@
         [HttpGet("/")]
         public IActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
-        [Route("Home/About")]
         public async Task<IActionResult> About()
         {
-            return Ok(await Mediator.Send(new EmployeesQuery { }));
+            return this.View(await Mediator.Send(new EmployeesQuery { }));
         }
 
-        [Route("Home/CommentSection")]
         public IActionResult CommentSection()
         {
-            return View();
+            return this.View();
         }
     }
 }

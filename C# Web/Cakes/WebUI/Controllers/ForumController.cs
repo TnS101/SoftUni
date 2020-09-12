@@ -9,84 +9,66 @@
 
     public class ForumController : BaseController
     {
-        [HttpGet("Forum/Home")]
-        [Route("Forum/Home")]
-        public async Task<IActionResult> Home()
+        public async Task<IActionResult> Start()
         {
             return this.View(await Mediator.Send(new GetAllTopicsQuery { Order = "none" }));
         }
-
-        [HttpGet("Forum/Recent")]
-        [Route("Forum/Recent")]
+        
         public async Task<IActionResult> Recent()
         {
             return this.View(await Mediator.Send(new GetAllTopicsQuery { Order = "recent" }));
         }
 
-        [HttpGet("Forum/Popular")]
-        [Route("Forum/Popular")]
         public async Task<IActionResult> Popular()
         {
             return this.View(await Mediator.Send(new GetAllTopicsQuery { Order = "popular" }));
         }
 
-        [HttpGet("Forum/CustomerTopics")]
-        [Route("Forum/CustomerTopics")]
         public async Task<IActionResult> CustomerTopics()
         {
             return this.View(await Mediator.Send(new CustomerTopicsQuery { Id = 1 }));
         }
 
-        [HttpPost("Forum/CreateTopic")]
-        [Route("Forum/CreateTopic")]
         public IActionResult CreateTopic()
         {
-            return View();
+            return this.View();
         }
 
-        [HttpPost("Forum/SubmittedCreate")]
-        [Route("Forum/SubmittedCreate")]
+        [HttpPost]
         public async Task<IActionResult> SubmittedCreate([FromForm] string topicName, [FromForm] string category, [FromForm] string content)
         {
             await Mediator.Send(new CreateTopicCommand { Name = topicName, Category = category, Content = content, CustomerId = 1 });
-            return View();
+            return this.View();
         }
 
-        [HttpPut("Forum/EditTopic")]
-        [Route("Forum/EditTopic")]
+        [HttpPut]
         public async Task<IActionResult> EditTopic([FromQuery] int topicId)
         {
-            return Ok(await Mediator.Send(new CurrentTopicQuery { Id = topicId }));
+            return this.View(await Mediator.Send(new CurrentTopicQuery { Id = topicId }));
         }
 
-        [HttpGet("Forum/SubmittedEdit")]
-        [Route("Forum/SubmittedEdit")]
         public async Task<IActionResult> SubmittedEdit([FromForm] string editName, [FromForm] string editCategory, [FromQuery] int topicId, [FromForm] string editContent)
         {
-            return Ok(await Mediator.Send(new EditTopicCommand { Name = editName, Category = editCategory, Id = topicId, Content = editContent }));
+            await Mediator.Send(new EditTopicCommand { Name = editName, Category = editCategory, Id = topicId, Content = editContent });
+            return this.Redirect("/Forum/Start");
         }
 
-        [HttpDelete("Forum/RemoveTopic")]
-        [Route("Forum/RemoveTopic")]
         public async Task<IActionResult> RemoveTopic([FromQuery] int topicId)
         {
             await Mediator.Send(new RemoveTopicCommand { Id = topicId });
-            return View();
+            return this.Redirect("/Forum/Start");
         }
 
-        [HttpGet("Forum/CurrentTopic")]
-        [Route("Forum/CurrentTopic")]
         public async Task<IActionResult> CurrentTopic([FromQuery] int topicId)
         {
-            return Ok(await Mediator.Send(new CurrentTopicQuery { Id = topicId }));
+            return this.View(await Mediator.Send(new CurrentTopicQuery { Id = topicId }));
         }
 
-        [HttpPost("Forum/LikeTopic")]
-        [Route("Forum/LikeTopic")]
+        [HttpPost]
         public async Task<IActionResult> LikeTopic([FromQuery] int topicId)
         {
             await Mediator.Send(new LikeTopicCommand { Id = topicId });
-            return View();
+            return this.Redirect("/Forum/Start");
         }
     }
 }
