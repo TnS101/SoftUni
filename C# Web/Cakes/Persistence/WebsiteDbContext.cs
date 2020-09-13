@@ -1,10 +1,12 @@
 ﻿namespace WebApplication1.Persistance
 {
     using Application.Common.Interfaces;
+    using Common;
     using Domain.Entities;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 
-    public class WebsiteDbContext : DbContext, IWebsiteDbContext
+    public class WebsiteDbContext : IdentityDbContext, IWebsiteDbContext
     {
         public WebsiteDbContext()
         {
@@ -27,11 +29,15 @@
 
         public DbSet<Employee> Employees { get; set; }
 
-        public DbSet<Order> Orders { get; set; }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
+
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder
+                    .UseSqlServer(GConst.ConnectionString);
+            }
         }
     }
 }

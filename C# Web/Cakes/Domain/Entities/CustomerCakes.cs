@@ -1,8 +1,8 @@
 ﻿namespace Domain.Entities
 {
-    public class ShoppingCart
+    public class CustomerCakes
     {
-        public string CustomerId { get; set; }
+        public string CustomId { get; set; }
 
         public Customer Customer { get; set; }
 

@@ -21,8 +21,6 @@
 
         DbSet<Employee> Employees { get; set; }
 
-        DbSet<Order> Orders { get; set; }
-
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

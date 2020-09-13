@@ -1,29 +1,25 @@
 ﻿namespace Domain.Entities
 {
+    using Microsoft.AspNetCore.Identity;
     using System.Collections.Generic;
 
-    public class Customer
+    public class Customer : IdentityUser
     {
         public Customer()
         {
-            Comments = new HashSet<Comment>();
-            Replies = new HashSet<Reply>();
+            this.Comments = new HashSet<Comment>();
+            this.Replies = new HashSet<Reply>();
+            this.ShoppingCarts = new HashSet<ShoppingCart>();
         }
-
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-
-        public string Password { get; set; }
-
-        public int Age { get; set; }
 
         public decimal Balance { get; set; }
 
         public string ImageURL { get; set; }
 
-        public ICollection<Comment> Comments { get; private set; }
+        public ICollection<Comment> Comments { get; set; }
 
-        public ICollection<Reply> Replies { get; private set; }
+        public ICollection<Reply> Replies { get; set; }
+
+        public ICollection<ShoppingCart> ShoppingCarts { get; set; }
     }
 }
