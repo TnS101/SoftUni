@@ -9,7 +9,7 @@
     {
         public async Task<IActionResult> Like([FromQuery]int commentId)
         {
-            return Ok(await Mediator.Send(new CommentLikeCommand { Id = commentId }));
+            return this.View(await this.Mediator.Send(new CommentLikeCommand { Id = commentId }));
         }
 
         public async Task<IActionResult> Add([FromQuery]int topicId, [FromForm]string content)
@@ -20,7 +20,7 @@
             }
             else
             {
-                return Ok(await Mediator.Send(new CreateCommentCommand { TopicId = topicId, Content = content }));
+                return this.View(await this.Mediator.Send(new CreateCommentCommand { TopicId = topicId, Content = content }));
             }
         }
     }
