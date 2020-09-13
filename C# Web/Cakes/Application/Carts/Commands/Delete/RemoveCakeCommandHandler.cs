@@ -1,26 +1,27 @@
-﻿namespace Application.Cakes.Commands.Delete
+﻿namespace Application.Carts.Commands.Delete
 {
     using Application.Common.Interfaces;
     using MediatR;
+    using Microsoft.EntityFrameworkCore;
     using System.Threading;
     using System.Threading.Tasks;
 
     public class RemoveCakeCommandHandler : IRequestHandler<RemoveCakeCommand>
     {
-        private readonly IWebsiteDbContext _context;
+        private readonly IWebsiteDbContext context;
 
         public RemoveCakeCommandHandler(IWebsiteDbContext context)
         {
-            _context = context;
+            this.context = context;
         }
 
         public async Task<Unit> Handle(RemoveCakeCommand request, CancellationToken cancellationToken)
         {
-            var cake = await _context.Cakes.FindAsync(request.Id);
+            var cake = await context.ShoppingCarts.FirstOrDefaultAsync(s => s.CustomerId == request.CustomerId && s.CakeId == request.CakeId);
 
-            _context.Cakes.Remove(cake);
+            this.context.ShoppingCarts.Remove(cake);
 
-            await _context.SaveChangesAsync(cancellationToken);
+            await context.SaveChangesAsync(cancellationToken);
 
             return Unit.Value;
         }
