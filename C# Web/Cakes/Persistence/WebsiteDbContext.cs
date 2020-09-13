@@ -29,6 +29,8 @@
 
         public DbSet<Employee> Employees { get; set; }
 
+        public DbSet<CustomerCakes> CustomersCakes { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);

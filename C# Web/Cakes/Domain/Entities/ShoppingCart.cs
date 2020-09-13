@@ -9,5 +9,7 @@
         public int CakeId { get; set; }
 
         public Cake Cake { get; set; }
+
+        public int Count { get; set; }
     }
 }

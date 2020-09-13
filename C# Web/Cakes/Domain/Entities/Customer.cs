@@ -12,7 +12,7 @@
             this.ShoppingCarts = new HashSet<ShoppingCart>();
         }
 
-        public decimal Balance { get; set; }
+        public double Balance { get; set; }
 
         public string ImageURL { get; set; }
 

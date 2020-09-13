@@ -1,10 +1,9 @@
 ﻿namespace Application.Comments.Commands.Update
 {
+    using Application.Common.Interfaces;
+    using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
-    using Application.Common.Interfaces;
-    using Domain.Entities;
-    using MediatR;
 
     public class ComentLikeCommandHandler : IRequestHandler<CommentLikeCommand>
     {
@@ -17,7 +16,7 @@
 
         public async Task<Unit> Handle(CommentLikeCommand request, CancellationToken cancellationToken)
         {
-            Comment comment = await _context.Comments.FindAsync(request.Id);
+            var comment = await _context.Comments.FindAsync(request.Id);
 
             comment.Likes++;
 

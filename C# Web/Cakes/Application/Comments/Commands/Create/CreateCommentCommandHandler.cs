@@ -23,7 +23,6 @@
             {
                 Content = request.Content,
                 Replies = new List<Reply>(),
-                Likes = 0,
                 SubmitTime = DateTime.UtcNow,
                 TopicId = request.TopicId
             });
