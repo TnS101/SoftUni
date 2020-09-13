@@ -1,6 +1,6 @@
 ﻿namespace Application.Cart.Queries
 {
-    public class CakeCartViewModel
+    public class CartViewModel
     {
         public int Id { get; set; }
 
