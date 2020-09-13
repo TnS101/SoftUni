@@ -1,6 +1,6 @@
 namespace WebUI
 {
-    using Application;
+    using Application.Common;
     using AutoMapper;
     using Domain;
     using Domain.Entities;
@@ -15,6 +15,7 @@ namespace WebUI
     using Application.Common.Interfaces;
     using Microsoft.EntityFrameworkCore;
     using Common;
+    using Application.Common.Mapping;
 
     public class Startup
     {
@@ -31,7 +32,13 @@ namespace WebUI
             new ServiceRegister(services);
 
             //Automapper
-            services.AddAutoMapper(typeof(Startup));
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
 
             //Database
             services.AddDbContext<WebsiteDbContext>(opt => opt.UseSqlServer(GConst.ConnectionString))
