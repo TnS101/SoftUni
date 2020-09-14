@@ -2,14 +2,17 @@
 {
     using Domain.Entities;
     using FluentValidation;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-    public class ReplyConfiguration : AbstractValidator<Reply>
+    public class ReplyConfiguration : IEntityTypeConfiguration<Reply>
     {
-        public void Validate()
+        public void Configure(EntityTypeBuilder<Reply> builder)
         {
-            RuleFor(reply => reply.CommentId).NotNull();
+            builder.HasKey(e => e.Id);
 
-            RuleFor(reply => reply.SubmitTime).NotNull();
+            builder.Property(e => e.CommentId)
+                .IsRequired();
         }
     }
 }

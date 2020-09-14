@@ -1,15 +1,18 @@
 ﻿namespace Persistance.Configurations
 {
     using Domain.Entities;
-    using FluentValidation;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-    public class CommentConfiguration : AbstractValidator<Comment>
+    public class CommentConfiguration : IEntityTypeConfiguration<Comment>
     {
-        public void Congfiure()
+        public void Configure(EntityTypeBuilder<Comment> builder)
         {
-            RuleFor(comment => comment.Content).NotNull().Length(5,200);
+            builder.HasKey(e => e.Id);
 
-            RuleFor(comment => comment.SubmitTime).NotNull();
+            builder.Property(e => e.Content)
+                .HasMaxLength(50)
+                .IsRequired();
         }
     }
 }

@@ -1,19 +1,25 @@
 ﻿namespace Persistance.Configurations
 {
     using Domain.Entities;
-    using FluentValidation;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-    public class CakeConfiguration : AbstractValidator<Cake>
+    public class CakeConfiguration : IEntityTypeConfiguration<Cake>
     {
-        public void Validate()
+        public void Configure(EntityTypeBuilder<Cake> builder)
         {
-            RuleFor(cake => cake.Name).NotNull();
+            builder.HasKey(e => e.Id);
 
-            RuleFor(cake => cake.Price).NotNull().InclusiveBetween(5, 50);
+            builder.Property(e => e.Name)
+                .HasMaxLength(50)
+                .IsRequired();
 
-            RuleFor(cake => cake.Description).NotNull().Length(50, 400);
+            builder.Property(e => e.Description)
+                .HasMaxLength(300)
+                .IsRequired();
 
-            RuleFor(cake => cake.ImageURL).NotNull();
+            builder.Property(e => e.ImageURL)
+                .IsRequired();
         }
     }
 }

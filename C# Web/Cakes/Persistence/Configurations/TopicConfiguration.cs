@@ -1,21 +1,29 @@
 ﻿namespace Persistance.Configurations
 {
     using Domain.Entities;
-    using FluentValidation;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-    public class TopicConfiguration : AbstractValidator<Topic>
+    public class TopicConfiguration : IEntityTypeConfiguration<Topic>
     {
-        public void Validate()
+        public void Configure(EntityTypeBuilder<Topic> builder)
         {
-            RuleFor(topic => topic.Name).NotNull().Length(3,30);
+            builder.HasKey(e => e.Id);
 
-            RuleFor(topic => topic.Content).NotNull();
+            builder.Property(e => e.Name)
+                .HasMaxLength(30)
+                .IsRequired();
 
-            RuleFor(topic => topic.Category).NotNull().Length(3, 30);
+            builder.Property(e => e.Content)
+                .HasMaxLength(300)
+                .IsRequired();
 
-            RuleFor(topic => topic.CustomerId).NotNull();
+            builder.Property(e => e.Category)
+                .HasMaxLength(30)
+                .IsRequired();
 
-            RuleFor(topic => topic.SubmitTime).NotNull();
+            builder.Property(e => e.CustomerId)
+                .IsRequired();
         }
     }
 }

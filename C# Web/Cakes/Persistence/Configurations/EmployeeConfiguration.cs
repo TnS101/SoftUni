@@ -1,19 +1,25 @@
 ﻿namespace Persistance.Configurations
 {
     using Domain.Entities;
-    using FluentValidation;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-    public class EmployeeConfiguration : AbstractValidator<Employee>
+    public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
     {
-        public void Validate()
+        public void Configure(EntityTypeBuilder<Employee> builder)
         {
-            RuleFor(employee => employee.Name).NotNull().Length(8,50);
+            builder.HasKey(e => e.Id);
 
-            RuleFor(employee => employee.ImageURL).NotNull();
+            builder.Property(e => e.Name)
+                .HasMaxLength(50)
+                .IsRequired();
 
-            RuleFor(employee => employee.Position).NotNull().Length(8, 50);
+            builder.Property(e => e.Position)
+                .HasMaxLength(50)
+                .IsRequired();
 
-            RuleFor(employee => employee.Salary).InclusiveBetween(500, 3000);
+            builder.Property(e => e.ImageURL)
+                .IsRequired();
         }
     }
 }
