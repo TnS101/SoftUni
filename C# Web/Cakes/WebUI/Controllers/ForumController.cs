@@ -26,7 +26,7 @@
 
         public async Task<IActionResult> CustomerTopics()
         {
-            return this.View(await Mediator.Send(new CustomerTopicsQuery { Id = 1 }));
+            return this.View(await Mediator.Send(new CustomerTopicsQuery { Id = this.UserId }));
         }
 
         public IActionResult CreateTopic()
@@ -37,7 +37,7 @@
         [HttpPost]
         public async Task<IActionResult> SubmittedCreate([FromForm] string topicName, [FromForm] string category, [FromForm] string content)
         {
-            await Mediator.Send(new CreateTopicCommand { Name = topicName, Category = category, Content = content, CustomerId = 1 });
+            await Mediator.Send(new CreateTopicCommand { Name = topicName, Category = category, Content = content, CustomerId = this.UserId });
             return this.View();
         }
 

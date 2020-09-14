@@ -19,5 +19,7 @@
         protected UserManager<Customer> UserManager => this.userManager ??= this.HttpContext.RequestServices.GetService<UserManager<Customer>>();
 
         protected SignInManager<Customer> SignInManager => this.signInManager ??= this.HttpContext.RequestServices.GetService<SignInManager<Customer>>();
+
+        protected string UserId => this.UserManager.GetUserId(this.User); 
     }
 }

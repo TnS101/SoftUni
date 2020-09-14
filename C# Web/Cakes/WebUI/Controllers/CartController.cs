@@ -1,7 +1,5 @@
 ﻿namespace WebUI.Controllers
 {
-    using Application.Cakes.Commands.Create;
-    using Application.Cakes.Commands.Delete;
     using Application.Cakes.Queries;
     using Application.Cart.Queries;
     using Application.Carts.Commands.Delete;
@@ -14,7 +12,7 @@
         [HttpGet("/Cart/")]
         public async Task<IActionResult> Home()
         {
-            return this.View(await this.Mediator.Send(new CakeCartQuery { CustomerId = this.UserId }));
+            return this.View(await this.Mediator.Send(new CartQuery { CustomerId = this.UserId }));
         }
 
         public async Task<IActionResult> RemoveCake([FromQuery] int cakeId)
