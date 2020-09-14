@@ -1,17 +1,18 @@
 ﻿namespace Persistance.Configurations
 {
     using Domain.Entities;
-    using FluentValidation;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-    public class CustomerConfiguration : AbstractValidator<Customer>
+    public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
     {
-        public void Validator()
+        public void Configure(EntityTypeBuilder<Customer> builder)
         {
-            RuleFor(customer => customer.Name).NotNull().Length(4, 20);
+            builder.HasKey(e => e.Id);
 
-            RuleFor(customer => customer.Age).NotNull().InclusiveBetween(10, 100);
-
-            RuleFor(customer => customer.Password).NotNull().Length(6, 30);
+            builder.Property(e => e.UserName)
+                .HasMaxLength(30)
+                .IsRequired();
         }
     }
 }
