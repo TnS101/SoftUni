@@ -23,7 +23,7 @@
             {
                 Name = topic.Name,
                 Content = topic.Name,
-                CustomerName = customer.Name,
+                CustomerName = customer.UserName,
                 Category = topic.Category,
                 Comments = (List<CurrentTopicCommentViewModel>)topic.Comments
             };

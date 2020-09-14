@@ -2,10 +2,8 @@
 {
     using MediatR;
 
-    public class CustomerBalanceQuery : IRequest<decimal>
+    public class CustomerBalanceQuery : IRequest<double>
     {
-        public int Id { get; set; }
-
-        public decimal Balance { get; set; }
+        public string Id { get; set; }
     }
 }

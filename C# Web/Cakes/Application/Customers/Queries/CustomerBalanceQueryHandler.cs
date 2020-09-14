@@ -4,19 +4,18 @@
     using MediatR;
     using System.Threading;
     using System.Threading.Tasks;
-    public class CustomerBalanceQueryHandler : IRequestHandler<CustomerBalanceQuery, decimal>
+    public class CustomerBalanceQueryHandler : IRequestHandler<CustomerBalanceQuery, double>
     {
         private readonly IWebsiteDbContext _context;
         public CustomerBalanceQueryHandler(IWebsiteDbContext context)
         {
             _context = context;
         }
-        public async Task<decimal> Handle(CustomerBalanceQuery request, CancellationToken cancellationToken)
+        public async Task<double> Handle(CustomerBalanceQuery request, CancellationToken cancellationToken)
         {
             var customer = await _context.Customers.FindAsync(request.Id);
-            request.Balance = customer.Balance;
 
-            return request.Balance;
+            return customer.Balance;
         }
     }
 }

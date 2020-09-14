@@ -32,7 +32,7 @@
                     SubmitTime = t.SubmitTime,
                     CustomerId = t.CustomerId,
                     CommentCount = t.Comments.Count,
-                    CustomerName = t.Customer.Name
+                    CustomerName = t.Customer.UserName
 
                 }).ToListAsync()
             };

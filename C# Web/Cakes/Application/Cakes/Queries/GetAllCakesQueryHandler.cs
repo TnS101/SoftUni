@@ -24,7 +24,7 @@
         {
             return new CakesListViewModel
             {
-                Cakes = await _context.Cakes.Where(c => c.ShoppingCart == null).ProjectTo<CakesFullViewModel>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken)
+                Cakes = await _context.Cakes.ProjectTo<CakesFullViewModel>(_mapper.ConfigurationProvider).ToListAsync(cancellationToken)
             };
         }
     }

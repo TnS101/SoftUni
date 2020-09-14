@@ -12,6 +12,6 @@
 
         public string Category { get; set; }
 
-        public int CustomerId { get; set; }
+        public string CustomerId { get; set; }
     }
 }

@@ -26,7 +26,6 @@
                 Content = request.Content,
                 CustomerId = request.CustomerId,
                 Comments = new List<Comment>(),
-                Likes = 0,
                 SubmitTime = DateTime.UtcNow
             });
 

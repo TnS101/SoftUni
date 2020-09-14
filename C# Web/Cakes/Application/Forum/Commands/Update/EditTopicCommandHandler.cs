@@ -19,15 +19,15 @@
         {
             Topic topic = await _context.Topics.FindAsync(request.Id);
 
-            if (request.Name != null)
+            if (!string.IsNullOrWhiteSpace(request.Name))
             {
                 topic.Name = request.Name;
             }
-            if (request.Category != null)
+            if (!string.IsNullOrWhiteSpace(request.Category))
             {
                 topic.Category = request.Category;
             }
-            if (request.Content != null)
+            if (!string.IsNullOrWhiteSpace(request.Content))
             {
                 topic.Content = request.Content;
             }
