@@ -16,6 +16,8 @@ namespace WebUI
     using Microsoft.EntityFrameworkCore;
     using Common;
     using Application.Common.Mapping;
+    using System;
+    using MediatR;
 
     public class Startup
     {
@@ -30,6 +32,9 @@ namespace WebUI
         {
             //Application Services
             new ServiceRegister(services);
+
+            var assembly = AppDomain.CurrentDomain.Load("Application");
+            services.AddMediatR(assembly);
 
             //Automapper
             var mappingConfig = new MapperConfiguration(mc =>
