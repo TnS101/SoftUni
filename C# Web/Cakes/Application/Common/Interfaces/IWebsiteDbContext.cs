@@ -19,6 +19,8 @@
 
         DbSet<ShoppingCart> ShoppingCarts { get; set; }
 
+        DbSet<CustomerCakes> CustomersCakes { get; set; }
+
         DbSet<Employee> Employees { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
