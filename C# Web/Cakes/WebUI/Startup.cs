@@ -1,23 +1,22 @@
 namespace WebUI
 {
-    using Application.Common;
+    using Application.Common.Interfaces;
+    using Application.Common.Mapping;
     using AutoMapper;
+    using Common;
     using Domain;
     using Domain.Entities;
+    using MediatR;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
-    using WebApplication1.Persistance;
-    using Microsoft.Extensions.Configuration;
-    using Application.Common.Interfaces;
-    using Microsoft.EntityFrameworkCore;
-    using Common;
-    using Application.Common.Mapping;
     using System;
-    using MediatR;
+    using WebApplication1.Persistance;
 
     public class Startup
     {
@@ -31,8 +30,6 @@ namespace WebUI
         public void ConfigureServices(IServiceCollection services)
         {
             //Application Services
-            new ServiceRegister(services);
-
             var assembly = AppDomain.CurrentDomain.Load("Application");
             services.AddMediatR(assembly);
 
