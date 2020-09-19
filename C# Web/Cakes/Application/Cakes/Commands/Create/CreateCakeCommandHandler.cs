@@ -9,12 +9,10 @@
     public class CreateCakeCommandHandler : IRequestHandler<CreateCakeCommand>
     {
         private readonly IWebsiteDbContext _context;
-        private readonly Customer customer;
 
-        public CreateCakeCommandHandler(IWebsiteDbContext context, Customer customer)
+        public CreateCakeCommandHandler(IWebsiteDbContext context)
         {
             _context = context;
-            this.customer = customer;
         }
 
         public async Task<Unit> Handle(CreateCakeCommand request, CancellationToken cancellationToken)
